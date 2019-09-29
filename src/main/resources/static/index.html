@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Hello, World!</title>
+</head>
+<body>
+<h1>Static Index</h1>
+    <h2>Say hello <a href="/hello?name=testName">Data Flow link</a></h2>
+   <table>
+  <thead>
+    <tr>
+      <th th:text="#{msgs.headers.name}">Flow ID</th>
+      <th th:text="#{msgs.headers.price}">Flow ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="prod: ${allProducts}">
+      <td th:text="${prod.name}">3d911455-f3a3-4a5e-a10c-1e608411aa47</td>
+      <td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}">2018-11-26 15:51:31.904</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
